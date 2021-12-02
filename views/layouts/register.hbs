@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<h1>Register</h1>
+	<form method="POST" enctype="multipart/form-data">
+		<label for="username">Username: </label>
+		<input type="text" id="username" name="username" maxlength="8" pattern="[A-Za-z]+" required>
+
+		<label for="password">Password: </label>
+		<input type="password" id="password" name="password" maxlength="25" pattern="[a-zA-Z\d!§?]+" required>
+		<br><br>
+		<button type="submit">Register</button>
+	</form>
+	<br>
+	<a href="/login">Return To Login</a>
+</body>
+
+</html>
