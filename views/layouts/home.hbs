@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>eVC | HOME</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/stylesheet.css">
-    </head>
-    <body>
-        <div class="container">
-            {{> header}}
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Startseite</title>
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
 
-            {{> footer}}
+<body>
+    <div class="container">
+        {{> header}}
+        <div class="sidebar"></div>
+        <div class="flexcontainer">
+            <div class="main" id="main">
+                <h3 class="ueberschrift">eVorsorgeCheck</h3>
+                {{{body}}}
+            </div>
         </div>
+        {{> footer}}
+    </div>
     <script src="../../js/main.js" async defer></script>
-    </body>
+</body>
+
 </html>

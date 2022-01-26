@@ -4,29 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ärztefinder</title>
+    <title>Startseite</title>
     <meta name="viewport" content="device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
-
     <div class="container">
         {{> header}}
-
         <div class="sidebar"></div>
         <div class="flexcontainer">
             <div class="main" id="main">
-                <h3 class="ueberschrift">Ärztefinder</h3>
-                {{{body}}}
+                <h3 class="ueberschrift">eVorsorgeCheck – Feedback</h3>
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSe59Cp3-BLJSw-3spmqBpcDa5grefyCBa58l8E5zv0CW0c0aA/viewform?embedded=true"
+                    width="640" height="2099" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
             </div>
-
         </div>
+        {{> footer}}
     </div>
-
-    {{> footer}}
-
-
     <script src="../../js/main.js" async defer></script>
 </body>
 

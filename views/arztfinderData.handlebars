@@ -1,0 +1,57 @@
+<label for="selectUntersuchung">Untersuchung auswählen:</label>
+<form method="POST">
+    <select class="selectCity" name="selectCity">
+        <option value="allCities" name="doctorCityPublic" selected></option>
+        <option value="allCities" name="doctorCityPublic">Alle Städte</option>
+
+        {{#each cities}}
+        <option value="{{this.doctorCityPublic}}" name="doctorCityPublic">
+            {{this.doctorCityPublic}}
+        </option>
+        {{/each}}
+    </select>
+
+    <select class="selectUntersuchung" name="selectUntersuchung" onchange="this.form.submit()">
+        <option value="allDocs" name="checkupId" selected></option>
+        <option value="allDocs" name="checkupId">Alle Ärzte</option>
+
+        {{#each checkups}}
+        <option value="{{this.checkupId}}" name="checkupId">
+            {{this.checkupName}} (ab {{this.checkupMinAge}}{{#if this.checkupMaxAge}} bis {{this.checkupMaxAge}}{{/if}})
+        </option>
+        {{/each}}
+    </select>
+</form>
+
+{{#if checkupHeading}}
+<h3>{{checkupHeading}}</h3>
+{{else}}
+<h3>Alle bei eVC registrierten Ärzte:</h3>
+{{/if}}
+
+<div class="arztGrid">
+    {{#each doctors}}
+    <div class="arztDiv">
+        <img class="arztBild" src="../../media/doctorProfPics/{{this.doctorId}}.jpg" alt="Profile Picture">
+        <h2>{{this.doctorName}}</h2>
+        <h3>{{this.doctorOfficePublic}}</h3>
+        <table>
+            <tr>
+                <td>Straße</td>
+                <td>{{this.doctorStreetPublic}} {{this.doctorHouseNrPublic}}</td>
+            </tr>
+            <tr>
+                <td>Ort</td>
+                <td>{{this.doctorCityPublic}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{this.doctorEmailPublic}}</td>
+            </tr>
+            <tr>
+                <td>Tel.</td>
+                <td>{{this.doctorTelPublic}}</td>
+            </tr>
+        </table>
+    </div>
+    {{/each}}

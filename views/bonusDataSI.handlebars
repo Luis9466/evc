@@ -1,0 +1,43 @@
+
+<p>Sie haben bisher <b>{{bonusSum}}</b> Punkte bei ihrer Krankenkasse gesammelt.</p>
+<table class="tableBonus">
+    <caption class="tableUeberschrift">Potentielle Punkte bei ihrer Krankenkasse durch vergangene Vorsorge:</caption>
+    <tr>
+        <th>Vorsorgeuntersuchung</th>
+        <th>Datum</th>
+        <th>Notizen</th>
+        <th>Punkte</th>
+    </tr>
+    {{#each pastCheckups}}
+    <tr>
+        <td>{{this.checkupName}}</td>
+        <td>{{this.date}}</td>
+        <td>{{this.notes}}</td>
+        <td>{{this.bonus}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<table class="tableBonus">
+
+    <caption class="tableUeberschrift">Bonusprogramm ihrer Krankenkasse ({{insurerBonus.insurerName}}):</caption>
+    <tr>
+        <th>Geschlecht</th>
+        <th>Altersspanne</th>
+        <th>Vorsorgeuntersuchung</th>
+        <th>Punkte</th>
+    </tr>
+    {{#each insurerBonus.data}}
+    <tr>
+        <td>{{this.checkupSex}}</td>
+        <td>ab {{this.checkupMinAge}}{{#if this.checkupMaxAge}} bis {{this.checkupMaxAge}}{{/if}}</td>
+        <td>{{this.checkupName}}</td>
+        <td>{{this.bonus}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<div class="infobox">
+    <h3>Die {{insurerBonus.insurerName}} Krankenkasse informiert:</h3>
+    <p>{{insurerBonus.insurerBonusInfo}}</p>
+</div>

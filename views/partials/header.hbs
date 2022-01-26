@@ -1,11 +1,19 @@
-<div class="header" id="header">
-    <div id="headerContent">
-        <a href="/">HOME</a>
-        <a href="/kompass">UNTERSUCHUNGSKOMPASS</a>
-        <a href="/bonus">BONUS ÜBERSICHT</a>
-        <a href="/arztfinder">ÄRZTEFINDER</a>
-        <form id="logOutForm" action="/logout?_method=DELETE" method="POST">
-            <button type="submit" id="logOutButton">SIGN OUT</button>
-        </form>
-    </div>
+<div class="header">
+    <a href="/home"><img src="../../media/logo.png" alt="logopng" class="logopng"></a>
+
+    <ul>
+        <li><a href="/home">Startseite</a></li>
+        <li><a href="/kompass">Untersuchungskompass</a></li>
+        <li><a href="/bonus">Bonusübersicht</a></li>
+        <li><a href="/arztfinder">Ärztefinder</a></li>
+        {{#if signedIn}}
+        <li>
+            <form id="logOutForm" action="/logout?_method=DELETE" method="POST">
+                <button type="submit" id="logOutButton">Abmelden</button>
+            </form>
+        </li>
+        {{else}}
+        <li><a href="/login">Login</a></li>
+        {{/if}}
+    </ul>
 </div>

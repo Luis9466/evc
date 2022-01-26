@@ -1,0 +1,27 @@
+{{#each bonusData}}
+
+<table class="tableBonus">
+
+    <caption class="tableUeberschrift">Bonusprogramm der {{this.insurerName}} Krankenkasse:</caption>
+    <tr>
+        <th>Geschlecht</th>
+        <th>Altersspanne</th>
+        <th>Vorsorgeuntersuchung</th>
+        <th>Punkte</th>
+    </tr>
+    {{#each this.data}}
+    <tr>
+        <td>{{this.checkupSex}}</td>
+        <td>ab {{this.checkupMinAge}}{{#if this.checkupMaxAge}} bis {{this.checkupMaxAge}}{{/if}}</td>
+        <td>{{this.checkupName}}</td>
+        <td>{{this.bonus}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<div class="infobox">
+    <h3>Die {{this.insurerName}} Krankenkasse informiert:</h3>
+    <p>{{this.insurerBonusInfo}}</p>
+</div>
+
+{{/each}}

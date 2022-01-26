@@ -1,0 +1,79 @@
+<h3>Haben Sie bereits in der Vergangenheit Untersuchungen abgeschlossen?</h3>
+<h4>
+    Hinterlegen Sie abgeschlossene Untersuchungen, um ihre Bonusübersicht und ihren Untersuchungskompass weiter zu
+    individualisieren.
+</h4>
+<label for="checkupSelect">Wählen Sie eine oder mehrere Untersuchungen aus:</label>
+<br>
+<select class="checkupSelect" id="checkupSelect" name="checkupSelect">
+    {{#each checkups}}
+    <option class="checkupSelectOption" value="{{this.checkupId}}">
+        (ab {{this.checkupMinAge}}{{#if this.checkupMaxAge}} bis {{this.checkupMaxAge}}{{/if}}) – {{this.checkupName}}
+    </option>
+    {{/each}}
+</select>
+<div id="insertFormDiv">
+    <form method="POST" id="inserForm">
+        <table id="insertFormTable" class="nodisplay">
+            <thead>
+                <th>Untersuchung</th>
+                <th>Abgeschlossen am</th>
+                <th>Notizen</th>
+                <th></th>
+                <th></th>
+                <input type="hidden" id="hiddenCounterInput" name="counter" value=0>
+            </thead>
+        </table>
+        <button type="submit" class="submitButton nodisplay" id="insertFormSubmitButton">Absenden</button>
+    </form>
+</div>
+<p id="checkupsHint">Sie finden eine Übersicht ihrer hinterlegten Untersuchungen unter <a href="/bonus">"Bonusübersicht"</a></p>
+<hr>
+<br><br><br>
+<h4>
+    Hier finden Sie Informationen zu allen Vorsorgeuntersuchung und Impfungen, welche die Verbraucherzentrale für Sie
+    empfiehlt
+</h4>
+<h3>Vorsorgeuntersuchung für Sie</h3>
+{{#each checkupSI}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+    <p>
+        Empfohlen im Alter
+        {{#if this.checkupMaxAge}}
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
+
+<h3>Impfungen für Sie</h3>
+{{#each checkupVaccSI}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+    <p>
+        Empfohlen im Alter
+        {{#if this.checkupMaxAge}}
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>

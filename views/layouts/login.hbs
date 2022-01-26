@@ -4,27 +4,44 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Chat | Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <meta name="viewport" content="device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
-    <h1>Login</h1>
-    <form method="POST">
-        {{#if messages.error}}
-        <h3>{{messages.error}}</h3>
-        {{/if}}
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username" maxlength="8" pattern="[A-Za-z]+" required>
+    <div class="container">
+        {{> header}}
+        <div class="sidebar"></div>
+        <div class="flexcontainer">
+            <div class="main" id="main">
+                <h3 class="ueberschrift">Login</h3>
+                <form method="POST">
+                    {{#if messages.error}}
+                    <h3>{{messages.error}}</h3>
+                    {{/if}}
+                    <table class="tableRegisterLogin">
+                        <tr>
+                            <td><label for="username">Username: </label></td>
+                            <td><input type="text" id="username" name="username" maxlength="20" pattern="[A-Za-z0-9]+" required></td>
+                        </tr>
 
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password" maxlength="25" pattern="[a-zA-Z\d!§?]+" required>
+                        <tr>
+                            <td><label for="password">Password: </label></td>
+                            <td><input type="password" id="password" name="password" maxlength="25" pattern="[a-zA-Z\d!§?]+" required></td>
+                        </tr>
+                    </table>
+                    <button type="submit">Login</button>
+                </form>
+                <br><br>
+                <a href="/register">Noch nicht registriert?</a>
+            </div>
+        </div>
 
-        <button type="submit">Login</button>
-    </form>
-    <br>
-    <a href="/register">Register</a>
+
+        {{> footer}}
+    </div>
+    <script src="../../js/main.js" async defer></script>
 </body>
 
 </html>

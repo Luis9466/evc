@@ -1,19 +1,84 @@
 <!DOCTYPE html>
 <html>
 
-<body>
-	<h1>Register</h1>
-	<form method="POST" enctype="multipart/form-data">
-		<label for="username">Username: </label>
-		<input type="text" id="username" name="username" maxlength="8" pattern="[A-Za-z]+" required>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Registrieren</title>
+	<meta name="viewport" content="device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/stylesheet.css">
+</head>
 
-		<label for="password">Password: </label>
-		<input type="password" id="password" name="password" maxlength="25" pattern="[a-zA-Z\d!§?]+" required>
-		<br><br>
-		<button type="submit">Register</button>
-	</form>
-	<br>
-	<a href="/login">Return To Login</a>
+<body>
+	<div class="container">
+		{{> header}}
+		<div class="sidebar"></div>
+		<div class="flexcontainer">
+			<div class="main" id="main">
+				<h3 class="ueberschrift">Registrierung</h3>
+
+				{{#if errMsg}}
+				<h3>{{errMsg}}</h3>
+				{{/if}}
+				
+				<form method="POST">
+					<table class="tableRegisterLogin">
+						<tr>
+							<td><label for="username">Benutzername: </label></td>
+							<td><input type="text" id="username" name="username" maxlength="20" pattern="[A-Za-z0-9]+" required></td>
+						</tr>
+
+						<tr>
+							<td><label for="email">Email: </label></td>
+							<td><input type="email" id="email" name="email" required></td>
+						</tr>
+
+						<tr>
+							<td><label for="password">Passwort: </label></td>
+							<td><input type="password" id="password" name="password" maxlength="25" required></td>
+						</tr>
+
+						<tr>
+							<td><label for="password2">Passwort wiederholen: </label></td>
+							<td><input type="password" id="password2" name="password2" maxlength="25" required></td>
+						</tr>
+					
+						<tr>
+						<td><label for="sexDiv">Geschlecht: </label></td>
+						<td><div id="sexDiv" name="sexDiv">
+							<input type="radio" id="sexM" name="sex" value="m">
+							<label for="sexM">Männlich</label>
+
+							<input type="radio" id="sexF" name="sex" value="w">
+							<label for="sexF">Weiblich</label>
+						</div></td>
+						</tr>
+						
+						<tr>
+							<td><label for="birthdate">Geburtsdatum: </label></td>
+							<td><input type="date" id="birthdate" name="birthdate" min="1920-01-01" required></td>
+						</tr>
+
+						<tr>
+							<td><label for="insurerSelect">Krankenkasse</label></td>
+							<td><select id="insurerSelect" name="insurerSelect">
+								<option value="null" selected>Keine der genannten</option>
+								<option value="1">Techniker</option>
+								<option value="2">AOK</option>
+								<option value="3">Barmer</option>
+							</select></td>
+						</tr>
+					</table>
+					<button type="submit">Registrieren</button>
+				</form>
+				<br><br>
+				<a href="/login">Zurück zum Login</a>
+			</div>
+		</div>
+
+		{{> footer}}
+	</div>
+	<script src="../../js/main.js" async defer></script>
 </body>
 
 </html>

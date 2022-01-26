@@ -1,0 +1,133 @@
+<h4>Hier finden Sie Informationen zu allen Vorsorgeuntersuchung und Impfungen, welche die Verbraucherzentrale empfiehlt</h4>
+<br><br><br>
+<h3>Vorsorgeuntersuchung für Männer und Frauen</h3>
+{{#each checkupMW}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+    <p>
+        Empfohlen für alle Männer und Frauen
+        {{#if this.checkupMaxAge}} 
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+        
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
+
+<h3>Vorsorgeuntersuchung für Frauen</h3>
+{{#each checkupW}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+        <p>
+        Empfohlen für alle Frauen
+        {{#if this.checkupMaxAge}} 
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+        
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
+
+<h3>Vorsorgeuntersuchung für Männer</h3>
+{{#each checkupM}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+        <p>
+        Empfohlen für alle Männer
+        {{#if this.checkupMaxAge}} 
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+        
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
+
+<h3>Impfungen für Erwachsene</h3>
+{{#each checkupVacc}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+        <p>
+        Empfohlen für alle Männer und Frauen
+        {{#if this.checkupMaxAge}} 
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+        
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
+
+<h3>Vorsorgeuntersuchung für Kinder und Jugendliche</h3>
+{{#each checkupK}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+        <p>
+        Empfohlen für alle Jungen und Mädchen
+        {{#if this.checkupMaxAge}} 
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+        
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
+
+<h3>Impfungen für Kinder und Jugendliche</h3>
+{{#each checkupKVacc}}
+<hr>
+<button class="accordion">{{this.checkupName}}</button>
+<div class="panel">
+        <p>
+        Empfohlen für alle Jungen und Mädchen
+        {{#if this.checkupMaxAge}} 
+        zwischen <b>{{this.checkupMinAge}}</b> und <b>{{this.checkupMaxAge}}</b> Jahren
+        {{else}}
+        ab <b>{{this.checkupMinAge}}</b> Jahren
+        {{/if}}
+        
+        {{#if this.checkupIntervalMonths}}
+        , in Intervallen von <b>{{this.checkupIntervalMonths}}</b> Monaten.
+        {{else}}.{{/if}}
+    </p>
+    <p>{{this.checkupDescription}}</p>
+</div>
+{{/each}}
+<br><br><br>
